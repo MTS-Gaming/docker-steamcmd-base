@@ -36,6 +36,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: string
+        uses: ASzc/change-string-case-action@v1
+        with:
+          string: ${{ github.repository }}
       
       - name: Build and push
         id: docker_build
@@ -44,6 +49,6 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/armhf
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
-            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ steps.string.outputs.lowercase }}:${{ steps.vars.outputs.sha_short }}
+            ghcr.io/${{ steps.string.outputs.lowercase }}:latest
           pull: true
