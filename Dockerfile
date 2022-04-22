@@ -5,11 +5,11 @@ RUN apt update; apt install -y lib32gcc-s1 curl;\
 
 USER steam:steam
 
-RUN mkdir -p ~/steamcmd ~/games;\
+RUN mkdir -p ~/steamcmd;\
     cd ~/steamcmd;\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -;\
     /home/steam/steamcmd/steamcmd.sh +quit
 
-WORKDIR /home/steam/games
-VOLUME [ "/home/steam/games" ]
+WORKDIR /home/steam/Steam/steamapps/common
+VOLUME [ "/home/steam/.local" ]
 ENTRYPOINT [ "/home/steam/steamcmd/steamcmd.sh" ]
