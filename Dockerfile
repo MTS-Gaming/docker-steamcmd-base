@@ -11,4 +11,5 @@ RUN mkdir -p ~/steamcmd ~/games;\
     /home/steam/steamcmd/steamcmd.sh +quit
 
 WORKDIR /home/steam/games
+VOLUME [ "/home/steam/games" ]
 ENTRYPOINT [ "/home/steam/steamcmd/steamcmd.sh" ]
