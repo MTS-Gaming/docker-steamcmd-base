@@ -13,3 +13,4 @@ RUN mkdir -p ~/steamcmd;\
 WORKDIR /home/steam/Steam/steamapps/common
 VOLUME [ "/home/steam/.local" ]
 ENTRYPOINT [ "/home/steam/steamcmd/steamcmd.sh" ]
+SHELL [ "/home/steam/steamcmd/steamcmd.sh", "+login", "anonymous" ]
