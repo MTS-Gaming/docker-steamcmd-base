@@ -10,4 +10,7 @@ FROM ghcr.io/mts-gaming/docker-steamcmd-base:latest
 
 ## Volumes
 
-`/home/steam/.local` is where games usually store their savegames.
+| Path | Description | Volume Definition |
+|------|-------------|-------------------|
+| `/home/steam/.local` | Where games usually store their savegames. | Yes |
+| `/home/steam/Steam/steamapps/common` | Where games are installed by default (I.E. when `force_install_dir` is not defined) | No |
