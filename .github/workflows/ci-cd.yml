@@ -52,9 +52,16 @@ jobs:
             ghcr.io/${{ steps.string.outputs.lowercase }}:${{ steps.vars.outputs.sha_short }}
             ghcr.io/${{ steps.string.outputs.lowercase }}:latest
           pull: true
+      
+      - name: Generate Token
+        id: generate_token
+        uses: jarylc/github-app-token@v3.0.1
+        with:
+          app: ${{ secrets.MTS_ACTIONS_APP }}
+          key: ${{ secrets.MTS_ACTIONS_KEY }}
           
       - name: Trigger child builds
         env:
-          GH_TOKEN: ${{secrets.MTS_ACTIONS_TOKEN}}
+          GH_TOKEN: ${{steps.generate_token.outputs.token}}
         run: |
           gh workflow run -R MTS-Gaming/rust "Build and Publish"
