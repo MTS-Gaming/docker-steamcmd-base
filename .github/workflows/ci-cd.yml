@@ -55,6 +55,6 @@ jobs:
           
       - name: Trigger child builds
         env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{secrets.MTS_ACTIONS_TOKEN}}
         run: |
           gh workflow run -R MTS-Gaming/rust "Build and Publish"
