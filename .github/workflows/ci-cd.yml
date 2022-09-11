@@ -55,4 +55,4 @@ jobs:
           
       - name: Trigger child builds
         run: |
-          curl -X POST -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/MTS-Gaming/rust/actions/workflows/ci-cd.yml/dispatches -d '{"ref": "master"}'
+          curl -X POST -H "Authorization: Bearer ${{secrets.MTS_ACTIONS_TOKEN}}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/MTS-Gaming/rust/actions/workflows/ci-cd.yml/dispatches -d '{"ref": "master"}'
