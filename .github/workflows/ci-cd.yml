@@ -57,5 +57,4 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          gh auth login; \
           gh workflow run -R MTS-Gaming/rust "Build and Publish"
