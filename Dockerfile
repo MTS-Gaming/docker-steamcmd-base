@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 LABEL org.opencontainers.image.authors="andrew_stclair@hotmail.com"
 LABEL description="steamcmd base image for use when building game server containers"
-LABEL version="v1.0.0"
+LABEL version="v1.0.1"
 
 RUN apt update; apt install -y lib32gcc-s1 curl;\
     useradd -m steam
