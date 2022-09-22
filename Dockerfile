@@ -15,6 +15,6 @@ RUN mkdir -p ~/steamcmd;\
     /home/steam/steamcmd/steamcmd.sh +quit
 
 WORKDIR /home/steam
-VOLUME [ "/home/steam/.local" ]
+#VOLUME [ "/home/steam/.local" ]
 ENTRYPOINT [ "/home/steam/steamcmd/steamcmd.sh" ]
 SHELL [ "/home/steam/steamcmd/steamcmd.sh", "+login", "anonymous" ]
