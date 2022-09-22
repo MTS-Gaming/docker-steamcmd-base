@@ -6,7 +6,7 @@ LABEL version="v1.0.1"
 
 RUN apt update; apt install -y lib32gcc-s1 curl;\
     useradd -m steam; \
-    chown -R steam:steam /home/steam
+    chown -R steam:steam /home/steam/*
 
 USER steam:steam
 
