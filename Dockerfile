@@ -5,7 +5,8 @@ LABEL description="steamcmd base image for use when building game server contain
 LABEL version="v1.0.1"
 
 RUN apt update; apt install -y lib32gcc-s1 curl;\
-    useradd -m steam
+    useradd -m steam; \
+    chown -R steam:steam /home/steam
 
 USER steam:steam
 
