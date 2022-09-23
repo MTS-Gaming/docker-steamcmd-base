@@ -12,5 +12,4 @@ RUN mkdir -p /steamcmd;\
     /steamcmd/steamcmd.sh +quit
 
 WORKDIR /
-VOLUME [ "/root/.local" ]
 CMD [ "/steamcmd/steamcmd.sh" ]
