@@ -64,5 +64,5 @@ jobs:
         env:
           GH_TOKEN: ${{steps.generate_token.outputs.token}}
         run: |
-          gh workflow run -R MTS-Gaming/rust "Build and Publish"; \
+          gh workflow run -R MTS-Gaming/rust "Build and Publish"
           gh workflow run -R MTS-Gaming/valheim "Build and Publish"
